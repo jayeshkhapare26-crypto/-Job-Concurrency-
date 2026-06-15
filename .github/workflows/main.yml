@@ -1,8 +1,8 @@
-name: Deploy Next Js App
+name: Deploy Next JS App
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -13,11 +13,14 @@ jobs:
       cancel-in-progress: true
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4.2.2
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Install Dependencies
         run: npm install
-      - name: Build Next.JS App
+
+      - name: Build Next.js App
         run: npm run build
+
       - name: Deploy App
-        run: echo "Deploying App...."
+        run: echo "Deploying App..."
